@@ -1,14 +1,14 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
+import os
 
 from langchain.llms import OpenAI
 from langchain import PromptTemplate
 
 
 def summaries_of_short_text():
-    # config
-    openai_api_key = "xxx"
-
+    openai_api_key = os.environ["OPENAI_API_KEY"]
+    print(openai_api_key)
     llm = OpenAI(temperature=0, model_name='gpt-3.5-turbo', openai_api_key=openai_api_key)  # 初始化LLM模型
 
     # 创建模板
